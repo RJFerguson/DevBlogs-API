@@ -1,4 +1,4 @@
-class CommentSerializer < ActiveModel::Serializer
+class ChildSerializer < ActiveModel::Serializer
   attributes :id, :content, :comments, :comment_ids, :parent_id
  
 
@@ -12,11 +12,11 @@ class CommentSerializer < ActiveModel::Serializer
 
   def child_ids
   
-  end 
+  end
 
   def comments
     object.comments.map do |comment|
-      ::ChildSerializer.new(comment).attributes
+      ::CommentSerializer.new(comment).attributes
     end
   end 
 
