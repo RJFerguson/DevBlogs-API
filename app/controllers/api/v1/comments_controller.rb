@@ -8,6 +8,7 @@ class Api::V1::CommentsController < ApplicationController
   def show 
 
   end 
+  #what is this doing?
   def new
     comment = commentable.comments.new
   end
