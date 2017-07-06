@@ -1,8 +1,10 @@
 class Api::V1::PostsController < ApplicationController
 
   def index 
-    posts = Post.all 
-    render json: posts
+    posts = Post.order(pubdate: :desc)
+    
+    paginate json: posts, per_page: 30
+    
   end 
 
   def show

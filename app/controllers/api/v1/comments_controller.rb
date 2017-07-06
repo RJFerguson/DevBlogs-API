@@ -23,7 +23,7 @@ class Api::V1::CommentsController < ApplicationController
       @comment = Comment.new(comment_params)
     end
     # @comment = @commentable.comments.new(allowed_params)  
-     @comment.saved_changes.transform_values(&:first)
+     @comment.save 
   end
 
   private
