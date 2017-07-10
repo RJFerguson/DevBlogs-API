@@ -13,4 +13,13 @@ class Api::V1::PostsController < ApplicationController
   end
 
 
+  def search
+    term = params[:term] || nil
+    posts = []
+    posts = Post.where('title LIKE ? '\
+    'OR company LIKE ? '\
+    'OR cast(pubdate as text) LIKE ?', "%#{term}%", "%#{term}%", "%#{term}%").limit(30) if term
+    render json: posts
+  end
+
 end

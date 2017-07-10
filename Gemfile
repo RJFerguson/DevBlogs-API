@@ -18,7 +18,7 @@ gem 'active_model_serializers'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 gem 'ancestry'
 gem 'closure_tree'
 # Use Capistrano for deployment
@@ -44,3 +44,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'will_paginate', '3.1.6'
 gem 'api-pagination', '4.6.3'
+gem 'jwt'
+gem 'figaro'
