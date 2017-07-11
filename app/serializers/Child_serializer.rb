@@ -1,5 +1,5 @@
 class ChildSerializer < ActiveModel::Serializer
-  attributes :id, :content, :parent, :parent_id, :comments
+  attributes :id, :user, :content, :parent, :parent_id, :comments
  
 # :comment_ids
 
