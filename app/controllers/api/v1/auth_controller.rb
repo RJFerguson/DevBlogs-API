@@ -22,4 +22,19 @@ class Api::V1::AuthController < ApplicationController
       }, status: 404
     end
   end
+
+  def createOauth
+    user = User.find_or_create_from_auth_hash(auth_hash)
+    render json: {
+        id: user.id,
+        username: user.username,
+        jwt: JWT.encode({user_id: user.id}, ENV['JWT_SECRET'], ENV['JWT_ALGO'])
+       }
+  end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 end

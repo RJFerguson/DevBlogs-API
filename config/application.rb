@@ -9,6 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
+
 # require "sprockets/railtie"
  require "rails/test_unit/railtie"
 
@@ -35,5 +36,7 @@ module DevBlogApi
         resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :patch]
       end
     end
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end
