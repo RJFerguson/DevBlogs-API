@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :user ,:content, :parent, :parent_id, :comments,
+  attributes :id, :user ,:content, :parent, :parent_id, :comments
 
   def parent_id
     if object.commentable_type == "Post"
