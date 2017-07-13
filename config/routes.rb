@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :comments
       end
       post '/login', to: 'auth#create'
-      get   '/login', :to => 'sessions#new'
+      get '/login', :to => 'sessions#new'
       get '/auth/:provider/callback', :to => 'sessions#create'
       get '/auth/failure', :to => 'sessions#failure'
       get '/current_user', to: 'auth#show'
