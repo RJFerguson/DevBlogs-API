@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         resources :comments
       end
       post '/login', to: 'auth#create'
+      post '/SignUp', to: 'users#create'
       
       get '/current_user', to: 'auth#show'
     end

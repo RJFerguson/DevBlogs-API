@@ -1,3 +1,5 @@
+
+
 class Api::V1::AuthController < ApplicationController
   before_action :authorize_user!, only: [:show]
 
@@ -22,4 +24,5 @@ class Api::V1::AuthController < ApplicationController
       }, status: 404
     end
   end
+
 end
